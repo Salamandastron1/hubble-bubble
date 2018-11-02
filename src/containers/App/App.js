@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import { fetchData } from '../../thunks/fetchData'
 
 class App extends Component {
+
+  componentDidMount () {
+    const { fetchData } = this.props
+    const url = 'https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/images'
+
+    fetchData(url)
+  }
   render() {
     return (
       <div className="App">
@@ -25,4 +34,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  fetchData: (url) => dispatch(fetchData(url))
+})
+
+export default connect(undefined, mapDispatchToProps)(App);
