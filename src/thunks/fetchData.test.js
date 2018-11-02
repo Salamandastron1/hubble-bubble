@@ -1,8 +1,8 @@
-import { onload } from './onload'
+import { fetchData } from './fetchData'
 import { starsReceived } from '../action-creators/astronomicalObjectsActions'
 import { toggleLoading } from '../action-creators/toggleLoading'
 
-describe('onload', () => {
+describe('fetchData', () => {
 
   let url;
   let mockDispatch;
@@ -22,7 +22,7 @@ describe('onload', () => {
       ok: false,
     }))
     const mockDispatch = jest.fn()
-    const thunk = onload(url)
+    const thunk = fetchData(url)
 
     await thunk(mockDispatch)
 
@@ -30,7 +30,7 @@ describe('onload', () => {
   })
   it('should call fetch with the correct params', async () => {
     const mockDispatch = jest.fn()
-    const thunk = onload(url)
+    const thunk = fetchData(url)
 
     await thunk(mockDispatch)
 
@@ -38,7 +38,7 @@ describe('onload', () => {
   })
   it('should call dispatch with toggleLoading if response is okay', async () => {
     const mockDispatch = jest.fn()
-    const thunk = onload(url)
+    const thunk = fetchData(url)
 
     await thunk(mockDispatch)
 
@@ -46,7 +46,7 @@ describe('onload', () => {
   })
   it('should call dispatch with starsReceived with params, if response is ok', async () => {
     const mockDispatch = jest.fn()
-    const thunk = onload(url)
+    const thunk = fetchData(url)
 
     await thunk(mockDispatch)
 
@@ -58,7 +58,7 @@ describe('onload', () => {
       message: 'ya suck'
     }))
     const mockDispatch = jest.fn()
-    const thunk = onload(url)
+    const thunk = fetchData(url)
 
     const result = await thunk(mockDispatch)
 
