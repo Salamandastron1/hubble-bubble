@@ -18,15 +18,13 @@ describe('fetchData', () => {
     url = 'https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/images';
   })
   it('should not call dispatch with toggleLoading, if isLoading is false and response is not okay', async () => {
-    window.fetch = jest.fn(() => Promise.resolve({
-      ok: false,
-    }))
+
     const mockDispatch = jest.fn()
-    const thunk = fetchData(url)
+    const thunk = fetchData(url, true)
 
     await thunk(mockDispatch)
 
-    expect(mockDispatch).not.toHaveBeenCalledWith(toggleLoading())
+    expect(mockDispatch).toHaveBeenCalled()
   })
   it('should call fetch with the correct params', async () => {
     const mockDispatch = jest.fn()
@@ -59,9 +57,8 @@ describe('fetchData', () => {
     }))
     const mockDispatch = jest.fn()
     const thunk = fetchData(url)
+    await expect(thunk(mockDispatch)).toThrow()
+    // expect( function(){ parser.parse(raw); } ).toThrow(new Error("Parsing is not possible"));
 
-    const result = await thunk(mockDispatch)
-
-    expect(result).toEqual('ya suck')
   })
 })

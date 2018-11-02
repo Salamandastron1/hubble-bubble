@@ -1,7 +1,7 @@
 import { starsReceived } from '../action-creators/astronomicalObjectsActions'
 import { toggleLoading } from '../action-creators/toggleLoading'
 
-export const fetchData = url => {
+export const fetchData = (url, isLoading) => {
   return async (dispatch) => { 
     if(!isLoading) {
       dispatch(toggleLoading())
@@ -9,13 +9,14 @@ export const fetchData = url => {
     try {
       const response = await fetch(url)
       if(!response.ok) {
-        throw Error(response.status)
+        throw new Error(response.message)
       } else {
         const starData = await response.json()
+        dispatch(toggleLoading())
         dispatch(starsReceived(starData))
       }
     } catch (e) {
-      throw Error(e.message)
+      console.log(e.message)
     }
   }
 }
