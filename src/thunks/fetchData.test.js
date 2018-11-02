@@ -1,6 +1,7 @@
 import { fetchData } from './fetchData'
 import { starsReceived } from '../action-creators/astronomicalObjectsActions'
 import { toggleLoading } from '../action-creators/toggleLoading'
+import { errorReceived } from '../action-creators/errorReceived'
 
 describe('fetchData', () => {
 
@@ -57,8 +58,21 @@ describe('fetchData', () => {
     }))
     const mockDispatch = jest.fn()
     const thunk = fetchData(url)
-    await expect(thunk(mockDispatch)).toThrow()
-    // expect( function(){ parser.parse(raw); } ).toThrow(new Error("Parsing is not possible"));
 
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(errorReceived('ya suck'))
+  })
+  it('should dispatch error if a promise fails fails', async () => {
+    window.fetch = jest.fn(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.reject('failure in promise')
+    }))
+    const mockDispatch = jest.fn()
+    const thunk = fetchData(url)
+
+    await thunk(mockDispatch)
+
+    expect(mockDispatch).toHaveBeenCalledWith(errorReceived())
   })
 })
