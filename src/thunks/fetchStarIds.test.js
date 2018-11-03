@@ -1,9 +1,9 @@
-import { fetchData } from './fetchData'
+import { fetchStarIds } from './fetchStarIds'
 import { starsReceived } from '../action-creators/astronomicalObjectsActions'
 import { toggleLoading } from '../action-creators/toggleLoading'
 import { errorReceived } from '../action-creators/errorReceived'
 
-describe('fetchData', () => {
+describe('fetchStarIds', () => {
 
   let url;
   let mockDispatch;
@@ -21,7 +21,7 @@ describe('fetchData', () => {
   it('should not call dispatch with toggleLoading, if isLoading is false and response is not okay', async () => {
 
     const mockDispatch = jest.fn()
-    const thunk = fetchData(url, true)
+    const thunk = fetchStarIds(url, true)
 
     await thunk(mockDispatch)
 
@@ -29,7 +29,7 @@ describe('fetchData', () => {
   })
   it('should call fetch with the correct params', async () => {
     const mockDispatch = jest.fn()
-    const thunk = fetchData(url)
+    const thunk = fetchStarIds(url)
 
     await thunk(mockDispatch)
 
@@ -37,7 +37,7 @@ describe('fetchData', () => {
   })
   it('should call dispatch with toggleLoading if response is okay', async () => {
     const mockDispatch = jest.fn()
-    const thunk = fetchData(url)
+    const thunk = fetchStarIds(url)
 
     await thunk(mockDispatch)
 
@@ -45,7 +45,7 @@ describe('fetchData', () => {
   })
   it('should call dispatch with starsReceived with params, if response is ok', async () => {
     const mockDispatch = jest.fn()
-    const thunk = fetchData(url)
+    const thunk = fetchStarIds(url)
 
     await thunk(mockDispatch)
 
@@ -57,7 +57,7 @@ describe('fetchData', () => {
       message: 'ya suck'
     }))
     const mockDispatch = jest.fn()
-    const thunk = fetchData(url)
+    const thunk = fetchStarIds(url)
 
     await thunk(mockDispatch)
 
@@ -69,7 +69,7 @@ describe('fetchData', () => {
       json: () => Promise.reject('failure in promise')
     }))
     const mockDispatch = jest.fn()
-    const thunk = fetchData(url)
+    const thunk = fetchStarIds(url)
 
     await thunk(mockDispatch)
 
