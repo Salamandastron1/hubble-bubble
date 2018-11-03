@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
 
+span {
+  color: pink;
+}
 .title {
   font-family: 'Titan One', cursive;
+  text-align: center;
+  font-size: 2em;
 }

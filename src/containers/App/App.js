@@ -17,7 +17,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className='title'>Bubble Hubble</h1>
+          <h1 
+            className='title'>
+            <span class>
+              Bubble
+            </span>  
+            Hubble
+          </h1>
         </header>
       </div>
     );

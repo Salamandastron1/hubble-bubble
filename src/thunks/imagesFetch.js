@@ -13,6 +13,7 @@ export const imagesFetch = stars => {
         } else {
           const data = await response.json()
           const filteredImage = filterImages(data.image_files)
+          
           return {name: data.name, description: data.description, image_files: filteredImage.file_url, id: star.id}
         }
       } catch(e) {
@@ -30,8 +31,8 @@ export const filterImages = data => {
       return image
     } else if (image.file_url.includes('.jpg') && image.width >= 2000) {
       return image
-    } else if (image.file_url.includes('.png') && image.width >= 1700){
-      return null
+    } else if (image.file_url.includes('.png') && image.width >= 565){
+      return image
     }
   })
 }
