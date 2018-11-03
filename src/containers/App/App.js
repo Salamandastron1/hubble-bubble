@@ -4,6 +4,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import { fetchStarIds } from '../../thunks/fetchStarIds';
 import { Switch, Route } from 'react-router-dom'
+import Header from '../../components/Header/Header'
 
 class App extends Component {
 
@@ -16,17 +17,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Switch>
-        <header className="App-header">
-          <h1 
-            className='title'>
-            <span className='bubble'>
-              Bubble
-            </span>  
-            <span className='shimmer'>Hubble </span>
-          </h1>
-        </header>
-      </Switch>
+        <Switch>
+          <Route path='/' component={Header} />
+        </Switch>
       </div>
     );
   }

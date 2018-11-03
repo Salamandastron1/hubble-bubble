@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match the snapshot 1`] = `
+<header
+  className="App-header"
+>
+  <h1
+    className="title"
+  >
+    <span
+      className="bubble"
+    >
+      Bubble
+    </span>
+    <span
+      className="shimmer"
+    >
+      Hubble 
+    </span>
+  </h1>
+</header>
+`;
