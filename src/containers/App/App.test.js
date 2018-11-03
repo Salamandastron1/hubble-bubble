@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow } from 'enzyme'
 import {BrowserRouter} from 'react-router-dom'
-import { fetchData } from '../../thunks/fetchData'
+import { fetchStarIds } from '../../thunks/fetchStarIds'
 import {mapStateToProps, mapDispatchToProps } from './App'
-jest.mock('../../thunks/fetchData')
+jest.mock('../../thunks/fetchStarIds')
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 
@@ -32,10 +32,10 @@ describe('app', () => {
       const mockDispatch = jest.fn()
       const mappedDispatch = mapDispatchToProps(mockDispatch)
 
-      mappedDispatch.fetchData(url)
+      mappedDispatch.fetchStarIds(url)
 
-      expect(mockDispatch).toHaveBeenCalledWith(fetchData(url))
-      expect(fetchData).toHaveBeenCalled()
+      expect(mockDispatch).toHaveBeenCalledWith(fetchStarIds(url))
+      expect(fetchStarIds).toHaveBeenCalled()
     })
   })
   describe('mapStateToProps', () => {

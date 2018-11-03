@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
-import { fetchData } from '../../thunks/fetchData'
+import { fetchStarIds } from '../../thunks/fetchStarIds'
 
 class App extends Component {
 
   componentDidMount () {
-    const { fetchData, isLoading } = this.props
+    const { fetchStarIds, isLoading } = this.props
     const url = 'https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/images'
 
-    fetchData(url, isLoading)
+    fetchStarIds(url, isLoading)
   }
   render() {
     return (
@@ -37,7 +37,7 @@ export const mapStateToProps = state => ({
   isLoading: state.isLoading
 })
 export const mapDispatchToProps = dispatch => ({
-  fetchData: (url, isLoading) => dispatch(fetchData(url, isLoading))
+  fetchStarIds: (url, isLoading) => dispatch(fetchStarIds(url, isLoading))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

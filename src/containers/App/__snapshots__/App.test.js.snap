@@ -2,7 +2,7 @@
 
 exports[`app should match the snapshot 1`] = `
 <App
-  fetchData={[Function]}
+  fetchStarIds={[Function]}
   store={
     Object {
       "clearActions": [Function],
