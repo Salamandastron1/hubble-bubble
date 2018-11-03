@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import { fetchStarIds } from '../../thunks/fetchStarIds'
 
 class App extends Component {
+
+  componentDidMount () {
+    const { fetchStarIds, isLoading } = this.props
+    const url = 'https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/images'
+
+    fetchStarIds(url, isLoading)
+  }
   render() {
     return (
       <div className="App">
@@ -24,5 +33,11 @@ class App extends Component {
     );
   }
 }
+export const mapStateToProps = state => ({
+  isLoading: state.isLoading
+})
+export const mapDispatchToProps = dispatch => ({
+  fetchStarIds: (url, isLoading) => dispatch(fetchStarIds(url, isLoading))
+})
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
