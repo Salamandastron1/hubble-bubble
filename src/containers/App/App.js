@@ -7,10 +7,10 @@ import { fetchData } from '../../thunks/fetchData'
 class App extends Component {
 
   componentDidMount () {
-    const { fetchData } = this.props
+    const { fetchData, isLoading } = this.props
     const url = 'https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/images'
 
-    fetchData(url)
+    fetchData(url, isLoading)
   }
   render() {
     return (
@@ -33,9 +33,11 @@ class App extends Component {
     );
   }
 }
-
+export const mapStateToProps = state => ({
+  isLoading: state.isLoading
+})
 export const mapDispatchToProps = dispatch => ({
-  fetchData: (url) => dispatch(fetchData(url))
+  fetchData: (url, isLoading) => dispatch(fetchData(url, isLoading))
 })
 
-export default connect(undefined, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

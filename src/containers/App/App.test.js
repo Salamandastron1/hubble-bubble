@@ -4,7 +4,7 @@ import App from './App';
 import { shallow } from 'enzyme'
 import {BrowserRouter} from 'react-router-dom'
 import { fetchData } from '../../thunks/fetchData'
-import { mapDispatchToProps } from './App'
+import {mapStateToProps, mapDispatchToProps } from './App'
 jest.mock('../../thunks/fetchData')
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
@@ -39,6 +39,18 @@ describe('app', () => {
     })
   })
   describe('mapStateToProps', () => {
-    it('should return an object with currentState')
+    it('should return an object with currentState', () => {
+      const desired = {
+        isLoading: true,
+      }
+      const mockState = {
+        isLoading: true,
+        error: 'no errors here',
+        astronomicalObjects: [{star: 'Sol'}]
+      }
+      const result = mapStateToProps(mockState)
+
+      expect(result).toEqual(desired)
+    })
   })
 })

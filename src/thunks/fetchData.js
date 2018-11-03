@@ -4,7 +4,6 @@ import { errorReceived } from '../action-creators/errorReceived'
 
 export const fetchData = (url, isLoading) => {
   return async (dispatch) => {
-  debugger; 
     if(!isLoading) {
       dispatch(toggleLoading())
     }
@@ -14,6 +13,7 @@ export const fetchData = (url, isLoading) => {
         dispatch(errorReceived(response.message))
       } else {
         const starData = await response.json()
+        console.log(starData)
         dispatch(starsReceived(starData))
         dispatch(toggleLoading())
       }
