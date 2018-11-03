@@ -19,10 +19,10 @@ class App extends Component {
         <header className="App-header">
           <h1 
             className='title'>
-            <span class>
+            <span className='bubble'>
               Bubble
             </span>  
-            Hubble
+            <span className='shimmer'>Hubble </span>
           </h1>
         </header>
       </div>
