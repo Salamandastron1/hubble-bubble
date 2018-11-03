@@ -13,10 +13,10 @@ export const fetchStarIds = (url, isLoading) => {
       if(!response.ok) {
         dispatch(errorReceived(response.message))
       } else {
-        dispatch(toggleLoading())
         const starIds = await response.json()
         const starData = await dispatch(imagesFetch(starIds))
         dispatch(starsReceived(starData))
+        dispatch(toggleLoading())
       }
     } catch (e) {
       dispatch(errorReceived(e.message))

@@ -19,6 +19,7 @@ export const imagesFetch = stars => {
         dispatch(errorReceived(e.message))
       }
     })
+    dispatch(toggleLoading())
     return Promise.all(unresolvedPromises)
   }
 }
