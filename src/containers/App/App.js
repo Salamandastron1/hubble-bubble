@@ -16,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Switch>
         <header className="App-header">
           <h1 
             className='title'>
@@ -25,6 +26,7 @@ class App extends Component {
             <span className='shimmer'>Hubble </span>
           </h1>
         </header>
+      </Switch>
       </div>
     );
   }
