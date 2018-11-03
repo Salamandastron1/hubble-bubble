@@ -1,6 +1,7 @@
 import { imagesFetch } from './imagesFetch'
 import { toggleLoading } from '../action-creators/toggleLoading'
 import { errorReceived } from '../action-creators/errorReceived'
+import { filterImages } from './imagesFetch'
 
 describe('imagesFetch', () => {
   let mockReturnData;
@@ -78,5 +79,67 @@ describe('imagesFetch', () => {
 
     expect(mockDispatch.mock.calls.length).toEqual(1)
     expect(mockDispatch.mock.calls.length).toEqual(2)
+  })
+})
+
+describe('filter images', () => {
+  let mockImages1;
+  let mockImages2;
+  beforeEach(() => {
+    mockImages1 = [
+      {
+        file_url: 'imagefile.png',
+        width: 3000,
+      },
+      {
+        file_url: 'imagefile.jpg',
+        width: 2000,
+      },
+      {
+        file_url: 'superImage.png',
+        width: 100,
+      }
+    ]
+    mockImages2 = [
+      {
+        file_url: 'imagefile.tint',
+        width: 3000,
+      },
+      {
+        file_url: 'superImage.png',
+        width: 100,
+      },
+      {
+        file_url: 'imagefile.jpg',
+        width: 2000,
+      }
+    ]
+  })
+  it('should return an image if includes png', () => {
+    const desired = {
+        file_url: 'imagefile.png',
+        width: 3000,
+      }
+    const result = filterImages(mockImages1)
+
+    expect(result).toEqual(desired)
+  })
+  it('should return an image if it includes jpg', () => {
+    const desired = {
+        file_url: 'imagefile.jpg',
+        width: 2000,
+    }
+    const result = filterImages(mockImages2)
+
+    expect(result).toEqual(desired)
+  })
+  it('should return an image if its width is greater than 2000 and is a png or jpg', () => {
+    const desired =  {
+      file_url: 'imagefile.jpg',
+      width: 2000,
+    }
+    const result = filterImages(mockImages2)
+
+    expect(result).toEqual(desired)
   })
 })

@@ -12,7 +12,7 @@ export const imagesFetch = stars => {
           throw Error(response.message)
         } else {
           const data = await response.json()
-          const filteredImage = filterImages(data)
+          const filteredImage = filterImages(data.image_files)
           return {name: data.name, description: data.description, image_files: filteredImage.file_url, id: star.id}
         }
       } catch(e) {
@@ -23,13 +23,13 @@ export const imagesFetch = stars => {
   }
 }
 
-const filterImages = data => {
-  return data.image_files.find(image => {
-    if(image.file_url.includes('.png') && image.width > 2000) {
+export const filterImages = data => {
+  return data.find(image => {
+    if(image.file_url.includes('.png') && image.width >= 2000) {
       return image
-    } else if (image.file_url && image.width) {
+    } else if (image.file_url.includes('.jpg') && image.width >= 2000) {
       return image
-    } else {
+    } else if (image.file_url.includes('.png') && image.width >= 1700){
       return null
     }
   })
