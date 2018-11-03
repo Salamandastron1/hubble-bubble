@@ -2,6 +2,7 @@ import { fetchStarIds } from './fetchStarIds'
 import { starsReceived } from '../action-creators/astronomicalObjectsActions'
 import { toggleLoading } from '../action-creators/toggleLoading'
 import { errorReceived } from '../action-creators/errorReceived'
+import { imagesFetch } from './imagesFetch'
 
 describe('fetchStarIds', () => {
 
