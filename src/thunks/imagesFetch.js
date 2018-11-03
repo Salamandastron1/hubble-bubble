@@ -12,7 +12,8 @@ export const imagesFetch = stars => {
           throw Error(response.message)
         } else {
           const data = await response.json()
-          return {...data, id: star.id}
+          const filteredImage = filterImages(data)
+          return {name: data.name, description: data.description, image_files: filteredImage.file_url, id: star.id}
         }
       } catch(e) {
         dispatch(errorReceived(e.message))
@@ -20,4 +21,16 @@ export const imagesFetch = stars => {
     })
     return Promise.all(unresolvedPromises)
   }
+}
+
+const filterImages = data => {
+  return data.image_files.find(image => {
+    if(image.file_url.includes('.png') && image.width > 2000) {
+      return image
+    } else if (image.file_url && image.width) {
+      return image
+    } else {
+      return null
+    }
+  })
 }
