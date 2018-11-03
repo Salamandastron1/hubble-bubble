@@ -1,18 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import './Header.css'
+import satellite from '../../assets/Aha-Soft-Transport-First-satellite.ico'
 
 const Header = (props) => {
   return (
-    <header className="App-header">
-      <h1 
-        className='title'>
-        <span className='bubble'>
-          Bubble
-        </span>  
-        <span className='shimmer'>Hubble </span>
-      </h1>
-    </header>
+    <section className='begin-game'>
+    <img src={satellite}/>
+      <NavLink 
+        className='game-nav'
+        to='/hubbleTrouble'>
+        Start Stellar Star Stream 
+      </NavLink>
+    <img src={satellite} />
+    </section>
   )
 }
 

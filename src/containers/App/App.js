@@ -17,6 +17,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header className="App-header">
+          <h1 
+            className='title'>
+            <span className='bubble'>
+              Bubble
+            </span>  
+            <span className='shimmer'>Hubble </span>
+          </h1>
+        </header>
         <Switch>
           <Route path='/' component={Header} />
         </Switch>
