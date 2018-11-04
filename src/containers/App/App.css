@@ -2,15 +2,45 @@
 .App {
   height: 100vh;
 }
+.App-header {
+    display: grid;
+    justify-content: center;
+    grid-gap: 20px;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
 .title {
   font-family: 'Titan One', cursive;
   text-align: center;
   font-size: 5em;
+  margin: 0;
+  grid-column: 2 / span 1;
 }
 .bubble {
   color: #e5c5c4;
 }
-
+.study {
+    justify-self: center;
+    font-family: 'Titan One', cursive;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    background: #c17cb3;
+    padding: 10px;
+    border-radius: 15px;
+}
+.study:hover {
+    font-family: 'Titan One', cursive;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    background: #97638c;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: inset -4px -3px 2px white
+}
 .shimmer {
     text-align: center;
     color: rgba(255, 255, 255, 0.1);

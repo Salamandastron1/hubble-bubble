@@ -8,3 +8,5 @@ export const Game = () => {
     </section>
   )
 }
+
+export default connect()(Game)

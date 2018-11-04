@@ -3,10 +3,10 @@ import logo from '../../logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
 import { fetchStarIds } from '../../thunks/fetchStarIds';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter, NavLink } from 'react-router-dom'
 import Header from '../../components/Header/Header'
-import Game from './Game/Game'
-import Study from './Study/Study'
+import Game from '../Game/Game'
+import Study from '../Study/Study'
 
 class App extends Component {
 
@@ -17,16 +17,27 @@ class App extends Component {
     fetchStarIds(url, isLoading)
   }
   render() {
+    const { history } = this.props
     return (
       <div className="App">
-        <header className="App-header">
+        <header
+          className="App-header">
           <h1 
             className='title'>
-            <span className='bubble'>
+            <span
+            onClick={() => history.push('/')} 
+            className='bubble'>
               Bubble
             </span>  
-            <span className='shimmer'>Hubble </span>
+            <span
+            onClick={() => history.push('/')} 
+            className='shimmer'>Hubble </span>
           </h1>
+          <NavLink 
+            className='study'
+            to='/studytime'>
+            Need to Study???
+          </NavLink>
         </header>
         <Switch>
           <Route path='/' component={Header} />
@@ -44,4 +55,4 @@ export const mapDispatchToProps = dispatch => ({
   fetchStarIds: (url, isLoading) => dispatch(fetchStarIds(url, isLoading))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

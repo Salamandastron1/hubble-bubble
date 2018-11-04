@@ -3,7 +3,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 60%;
     animation: spin-right 5s linear infinite;
 }
 .game-nav {
@@ -21,7 +21,6 @@
     font-family: 'Titan One', cursive;
     text-decoration: none;
     color: white;
-    font-size: 2em;
     text-align: center;
     background: #97638c;
     padding: 10px;
