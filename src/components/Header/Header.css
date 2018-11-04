@@ -1,7 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
-
+.begin-game {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    animation: spin-right 5s linear infinite;
+}
 .game-nav {
     font-family: 'Titan One', cursive;
     text-decoration: none;
-    color: #e5c5c4;
+    color: #c17cb3;
+    font-size: 2em;
+    text-align: center;
+}
+.planet-orbit {
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(37% at 50% 50%);
+    background: #e5c5c4;
+    height: 100%;
+}
+.button-text {
+    animation: spin-left 5s linear infinite;
+}
+@-webkit-keyframes spin-right {
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin-left {
+    0% {
+        -webkit-transform: rotate(360deg);
+    }
+    100%{
+        -webkit-transform: rotate(0deg);
+    }
 }

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
-
+.App {
+  height: 100vh;
+}
 .title {
   font-family: 'Titan One', cursive;
   text-align: center;
@@ -8,8 +10,6 @@
 .bubble {
   color: #e5c5c4;
 }
-
-
 
 .shimmer {
     text-align: center;
