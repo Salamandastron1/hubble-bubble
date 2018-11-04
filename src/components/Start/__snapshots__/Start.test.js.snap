@@ -4,6 +4,7 @@ exports[`should match the snapshot 1`] = `
 <section
   className="begin-game"
 >
+  <Header />
   <div
     className="planet-orbit"
   />

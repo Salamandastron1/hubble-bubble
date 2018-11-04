@@ -11,8 +11,14 @@ describe('study', () => {
   })
   describe('mapStateToProps', () => {
     it('should return an object with the properties desired from state', () => {
-      const desired = {}
-      const mockState = {}
+      const desired = {
+        astronomicalObjects: [{meow: 'meow'}],
+        filter: 'SHOW_ALL'
+      }
+      const mockState = {
+        astronomicalObjects: [{meow: 'meow'}],
+        filter: 'SHOW_ALL'
+      }
       const result = mapStateToProps(mockState)
 
       expect(result).toEqual(desired)

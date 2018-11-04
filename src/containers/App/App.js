@@ -40,8 +40,8 @@ class App extends Component {
           </NavLink>
         </header>
         <Switch>
-          <Route path='/' component={Header} />
-          <Route path='/gametime' component={Game} />
+          <Route exact path='/' component={Header} />
+          <Route exact path='/gametime' component={Game} />
           <Route path='/studytime' component={Study} />
         </Switch>
       </div>
