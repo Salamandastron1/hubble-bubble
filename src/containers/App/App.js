@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { fetchStarIds } from '../../thunks/fetchStarIds';
 import { Switch, Route } from 'react-router-dom'
 import Header from '../../components/Header/Header'
+import Game from './Game/Game'
+import Study from './Study/Study'
 
 class App extends Component {
 
@@ -28,6 +30,8 @@ class App extends Component {
         </header>
         <Switch>
           <Route path='/' component={Header} />
+          <Route path='/gametime' component={Game} />
+          <Route path='/studytime' component={Study} />
         </Switch>
       </div>
     );
