@@ -1,11 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { toggleSelected } from '../../action-creators/astronomicalObjectsActions'
+import { makeQuestions } from '../../util/helper'
 
 
 export const Game = (props) => {
   const { selectedAnswer, astronomicalObjects, isLoading } = props
-  const randomIndice = Math.floor(Math.random() * Math.floor(astronomicalObjects.length - 1))
+  const randomIndices = makeQuestions(astronomicalObjects)
+  const randomAnswers = randomIndices.map(indice => {
+    return (            
+      <div>
+          <input type='radio' name='name' value={astronomicalObjects[indice].name} checked='checked'/>
+          <label for={astronomicalObjects[indice].name}>{astronomicalObjects[indice].name}</label>
+      </div>
+    )
+  })
+
   if(isLoading) {
     return (
       <div className='spinner'>
@@ -14,11 +24,15 @@ export const Game = (props) => {
       </div>
     )
   } else {
-    debugger
     return (
       <section>
-        <img src={astronomicalObjects[randomIndice].image_files} />
-        <button>Submit</button>
+        <img height='400' width='400'src={astronomicalObjects[randomIndices[0]].image_files} />
+          <form>
+          <fieldset>
+            <legend>Which name matches the picture?</legend>
+              {randomAnswers}
+          </fieldset>
+        </form>
       </section>
     )
   }
