@@ -40,9 +40,7 @@ describe('app', () => {
   })
   describe('mapStateToProps', () => {
     it('should return an object with currentState', () => {
-      const desired = {
-        isLoading: true,
-      }
+      const desired = {"astronomicalObjects": [{"star": "Sol"}], "isLoading": true}
       const mockState = {
         isLoading: true,
         error: 'no errors here',

@@ -1,20 +1,33 @@
 import React from 'react'
-import {NavLink, withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
+import Card from '../../components/Card/Card'
+import './Study.css'
 
 export const Study = props => {
-  const { astronomicalObjects } = props
-  const cards = ''
-  return (
-    <section>
-      {cards}
-    </section>
-  )
+  const { astronomicalObjects, isLoading } = props
+  const cards = astronomicalObjects.map(star => {
+    return <Card star={star} key={star.id}/>
+  })
+  if(isLoading) {
+    return (
+      <div className='spinner'>
+        <div className='star1'></div>
+        <div className='star2'></div>
+      </div>
+    )
+  } else {
+    return (
+      <section className='card-container'>
+        {cards}
+      </section>
+    )
+  }
 }
 
 export const mapStateToProps = state => ({
   astronomicalObjects: state.astronomicalObjects,
-  filter: state.filter
+  filter: state.filter,
+  isLoading: state.isLoading
 })
 
 export default connect(mapStateToProps)(Study)

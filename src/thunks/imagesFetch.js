@@ -3,7 +3,6 @@ import { errorReceived } from '../action-creators/errorReceived'
 
 export const imagesFetch = stars => {
   return dispatch => {
-    dispatch(toggleLoading())
     const unresolvedPromises = stars.map(async star => {
       try {
         const url = `https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/image/${star.id}`
@@ -14,13 +13,12 @@ export const imagesFetch = stars => {
           const data = await response.json()
           const filteredImage = filterImages(data.image_files)
           
-          return {name: data.name, description: data.description, image_files: filteredImage.file_url, id: star.id}
+          return {name: data.name, description: data.description, image_files: filteredImage.file_url, id: star.id, selected: false}
         }
       } catch(e) {
         dispatch(errorReceived(e.message))
       }
     })
-    dispatch(toggleLoading())
     return Promise.all(unresolvedPromises)
   }
 }
@@ -33,6 +31,8 @@ export const filterImages = data => {
       return image
     } else if (image.file_url.includes('.png') && image.width >= 565){
       return image
+    } else {
+      return null
     }
   })
 }

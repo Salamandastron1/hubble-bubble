@@ -5,7 +5,7 @@ import { mapStateToProps } from './Study'
 
 describe('study', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Study />)
+    const wrapper = shallow(<Study astronomicalObjects={[]}/>)
 
     expect(wrapper).toMatchSnapshot()
   })
@@ -13,11 +13,14 @@ describe('study', () => {
     it('should return an object with the properties desired from state', () => {
       const desired = {
         astronomicalObjects: [{meow: 'meow'}],
-        filter: 'SHOW_ALL'
+        filter: 'SHOW_ALL',
+        isLoading: false
       }
       const mockState = {
         astronomicalObjects: [{meow: 'meow'}],
-        filter: 'SHOW_ALL'
+        filter: 'SHOW_ALL',
+        isLoading: false
+        error: 'meow'
       }
       const result = mapStateToProps(mockState)
 

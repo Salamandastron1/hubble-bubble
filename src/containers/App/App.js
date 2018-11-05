@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
 import { fetchStarIds } from '../../thunks/fetchStarIds';
@@ -7,17 +6,18 @@ import { Switch, Route, withRouter, NavLink } from 'react-router-dom'
 import Header from '../../components/Header/Header'
 import Game from '../Game/Game'
 import Study from '../Study/Study'
+import StarDetails from '../../components/StarDetails/StarDetails'
 
 class App extends Component {
 
   componentDidMount () {
     const { fetchStarIds, isLoading } = this.props
-    const url = 'https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/images'
+    const url = 'https://cors-anywhere.herokuapp.com/http://hubblesite.org/api/v3/images/all?page=2'
 
     fetchStarIds(url, isLoading)
   }
   render() {
-    const { history } = this.props
+    const { history, astronomicalObjects } = this.props
     return (
       <div className="App">
         <header
@@ -42,6 +42,12 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Header} />
           <Route exact path='/gametime' component={Game} />
+          <Route path='/studytime/:id' render={({match}) => {
+            const star = astronomicalObjects.find(object => {
+              return object.id === parseInt(match.params.id)
+            })
+            return <StarDetails {...star}/>
+          }} />
           <Route path='/studytime' component={Study} />
         </Switch>
       </div>
@@ -49,7 +55,8 @@ class App extends Component {
   }
 }
 export const mapStateToProps = state => ({
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  astronomicalObjects: state.astronomicalObjects,
 })
 export const mapDispatchToProps = dispatch => ({
   fetchStarIds: (url, isLoading) => dispatch(fetchStarIds(url, isLoading))
