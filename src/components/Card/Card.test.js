@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 
 describe('Card', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Card />)
+    const wrapper = shallow(<Card star={{name: 'name', image_files: 'meow', id: 4, description: 'derp'}}/>)
 
     expect(wrapper).toMatchSnapshot()
   })
