@@ -5,6 +5,7 @@ import './PopUp.css'
 
 export const PopUp = (props) => {
   const { star, nextQuestion, closePopUp, correct } = props
+  
   return (
     <section className='popup-outer'>
       <div className='popup-inner'>

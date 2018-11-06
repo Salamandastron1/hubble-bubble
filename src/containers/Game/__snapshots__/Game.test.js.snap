@@ -34,6 +34,7 @@ exports[`Game should matcht the snapshot 1`] = `
       "unsubscribe": [Function],
     }
   }
+  togglePopUp={[Function]}
 />
 `;
 
@@ -71,5 +72,6 @@ exports[`Game should return a different render if isLoading is True 1`] = `
       "unsubscribe": [Function],
     }
   }
+  togglePopUp={[Function]}
 />
 `;
