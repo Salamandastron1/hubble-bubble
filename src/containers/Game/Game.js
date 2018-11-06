@@ -22,12 +22,10 @@ class Game extends Component {
     })
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    this.setState({
-      selectedAnswer: '',
-      answers: []
-    })
+  handleSubmit = (imageId, radioId) => {
+    if(imageId === radioId) {
+
+    }
   }
 
   render () {
@@ -63,11 +61,16 @@ class Game extends Component {
         </div>
       )
     } else {
+      const answerSubject = astronomicalObjects[randomIndices[subject]]
       return (
         <section>
-          <img height='400' width='400'src={astronomicalObjects[randomIndices[subject]].image_files} />
+          <img height='400' width='400'src={answerSubject.image_files} />
             <form
-              onSubmit={this.handleSubmit}>
+              onSubmit={(e) => {
+                e.preventDefault()
+                this.handleSubmit(answerSubject.id, selectedAnswer)
+              }
+            }>
             <fieldset>
               <legend>Which name matches the picture?</legend>
                 {randomAnswers}
@@ -76,6 +79,7 @@ class Game extends Component {
               type='submit' 
               value='Submit'/>
           </form>
+          
         </section>
       )
     }
