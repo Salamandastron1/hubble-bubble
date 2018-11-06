@@ -30,6 +30,7 @@ class Game extends Component {
       selectedAnswer: '',
       answers: [],
       imageSelection: null,
+      correct: false
     })
   }
   handleSubmit = (imageId, radioId) => {
@@ -41,6 +42,9 @@ class Game extends Component {
       })
     }else {
       this.props.togglePopUp()
+      this.setState({
+        ...this.state
+      })
     }
   }
 

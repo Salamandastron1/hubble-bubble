@@ -10,7 +10,7 @@ export const PopUp = (props) => {
       <div className='popup-inner'>
       {correct ?
         <h1>WOW YOU'RE RIGHT</h1>
-        : <h1>WOW!! YOU'RE WRONG</h1>}
+        : <h1>Noooooot quite :)</h1>}
         <h2>{star.name}</h2>
         <button
           onClick={() => {
