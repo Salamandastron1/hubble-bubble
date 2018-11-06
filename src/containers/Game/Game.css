@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.game {
+  display: grid;
+  justify-items: center;
+  grid-gap: 20px;
+}
+
+.game-form {
+  color: white;
+  display: grid;
+  background: #c17cb3;
+  justify-items: center;
+  grid-gap: 10px;
+  padding: 15px;
+  border-radius: 20px;
+  width: 50%;
+  height: 100%;
+  font-size: 1.5em;
+  font-family: 'Roboto', sans-serif;;
+}
+.submit {
+  font-family: 'Titan One', cursive;
+  color: white;
+  background: #864385;
+  border-radius: 30px;
+  width: 150px;
+  font-size: 1em;
+  border: none;
+}
+
+.submit: hover {
+  box-shadow: inset -4px -3px 2px white
+}

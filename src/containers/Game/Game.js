@@ -4,6 +4,7 @@ import * as starActions from '../../action-creators/astronomicalObjectsActions'
 import { makeQuestions } from '../../util/helper'
 import PopUp from '../PopUp/PopUp'
 import { popUpToggle } from '../../action-creators/popUpToggle'
+import './Game.css'
 
 
 class Game extends Component {
@@ -13,6 +14,7 @@ class Game extends Component {
       selectedAnswer: '',
       answers: [],
       imageSelection: null,
+      correct: false,
     }
   }
 
@@ -33,12 +35,18 @@ class Game extends Component {
   handleSubmit = (imageId, radioId) => {
     if(imageId === radioId) {
       this.props.togglePopUp()
+      this.setState({
+        ...this.state,
+        correct: true
+      })
+    }else {
+      this.props.togglePopUp()
     }
   }
 
   render () {
     const { chooseAnswer, astronomicalObjects, isLoading, popUp } = this.props;
-    const { selectedAnswer, answers, imageSelection } = this.state;
+    const { selectedAnswer, answers, imageSelection, correct } = this.state;
     let randomIndices;
     let subject;
     if(answers.length > 1) {
@@ -71,25 +79,27 @@ class Game extends Component {
     } else {
       const answerSubject = astronomicalObjects[randomIndices[subject]]
       return (
-        <section>
+        <section className='game'>
           <img height='400' width='400'src={answerSubject.image_files} />
             <form
               onSubmit={(e) => {
-                console.log(this.state)
                 e.preventDefault()
                 this.handleSubmit(answerSubject.id, selectedAnswer)
               }
-            }>
+            }
+              className='game-form'>
             <fieldset>
               <legend>Which name matches the picture?</legend>
                 {randomAnswers}
             </fieldset>
-            <input 
+            <input
+              className='submit' 
               type='submit' 
               value='Submit'/>
           </form>
           {popUp ? 
-            <PopUp 
+            <PopUp
+              correct={correct} 
               star={answerSubject}
               nextQuestion={this.nextQuestion}
             />

@@ -1,0 +1,25 @@
+.popup-outer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; 
+}
+
+.popup-inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  background: #e5c5c4;
+  overflow-y: scroll;
+  display: grid;
+  justify-items: center;
+  padding: 25px;
+  border-radius: 25px;
+}

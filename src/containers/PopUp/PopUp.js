@@ -1,27 +1,31 @@
 import React from 'react'
 import { popUpToggle } from '../../action-creators/popUpToggle'
 import { connect } from 'react-redux'
+import './PopUp.css'
 
 export const PopUp = (props) => {
-  console.log(props)
-  const { star, nextQuestion, closePopUp } = props
+  const { star, nextQuestion, closePopUp, correct } = props
   return (
-    <section>
-    <h1>WOW YOU CLICKED SUBMIT</h1>
-      <h2>{star.name}</h2>
-      <img 
-        src={star.image_files} 
-        height='200'
-        width='300' />
-      <p>{star.description}</p>
-      <button
-        onClick={() => {
-          closePopUp();
-          nextQuestion()
-        }}
-      >
-        Next Question
-      </button>
+    <section className='popup-outer'>
+      <div className='popup-inner'>
+      {correct ?
+        <h1>WOW YOU'RE RIGHT</h1>
+        : <h1>WOW!! YOU'RE WRONG</h1>}
+        <h2>{star.name}</h2>
+        <button
+          onClick={() => {
+            closePopUp();
+            nextQuestion()
+          }}
+        >
+          Next Question
+        </button>
+        <img 
+          src={star.image_files} 
+          height='200'
+          width='300' />
+        <p>{star.description}</p>
+      </div>
     </section>
   )
 }
