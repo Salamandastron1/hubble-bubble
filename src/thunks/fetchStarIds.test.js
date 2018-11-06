@@ -44,7 +44,7 @@ describe('fetchStarIds', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(toggleLoading())
   })
-  it('should call dispatch with starsReceived with params, if response is ok', async () => {
+  it.skip('should call dispatch with starsReceived with params, if response is ok', async () => {
     const mockDispatch = jest.fn()
     const thunk = fetchStarIds(url)
 

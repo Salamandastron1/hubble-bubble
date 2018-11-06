@@ -5,7 +5,12 @@ import { mapStateToProps } from './Study'
 
 describe('study', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Study astronomicalObjects={[]}/>)
+    const wrapper = shallow(<Study astronomicalObjects={[{id: 4, name: 'name'}]}/>)
+
+    expect(wrapper).toMatchSnapshot()
+  })
+  it('should render something different if is isLoading is true', () => {
+    const wrapper = shallow(<Study astronomicalObjects={[]} isLoading={true}/>)
 
     expect(wrapper).toMatchSnapshot()
   })
@@ -19,7 +24,7 @@ describe('study', () => {
       const mockState = {
         astronomicalObjects: [{meow: 'meow'}],
         filter: 'SHOW_ALL',
-        isLoading: false
+        isLoading: false,
         error: 'meow'
       }
       const result = mapStateToProps(mockState)

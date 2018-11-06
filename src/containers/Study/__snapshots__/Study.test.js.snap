@@ -3,5 +3,28 @@
 exports[`study should match the snapshot 1`] = `
 <section
   className="card-container"
-/>
+>
+  <Card
+    key="4"
+    star={
+      Object {
+        "id": 4,
+        "name": "name",
+      }
+    }
+  />
+</section>
+`;
+
+exports[`study should render something different if is isLoading is true 1`] = `
+<div
+  className="spinner"
+>
+  <div
+    className="star1"
+  />
+  <div
+    className="star2"
+  />
+</div>
 `;

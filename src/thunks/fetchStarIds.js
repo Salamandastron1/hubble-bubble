@@ -5,7 +5,6 @@ import { imagesFetch } from './imagesFetch'
 
 export const fetchStarIds = (url, isLoading) => {
   return async (dispatch) => {
-    console.log(isLoading)
     if(!isLoading) {
       dispatch(toggleLoading())
     }

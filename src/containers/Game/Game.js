@@ -1,40 +1,76 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { toggleSelected } from '../../action-creators/astronomicalObjectsActions'
+import * as starActions from '../../action-creators/astronomicalObjectsActions'
 import { makeQuestions } from '../../util/helper'
 
 
-export const Game = (props) => {
-  const { selectedAnswer, astronomicalObjects, isLoading } = props
-  const randomIndices = makeQuestions(astronomicalObjects)
-  const randomAnswers = randomIndices.map(indice => {
-    return (            
-      <div>
-          <input type='radio' name='name' value={astronomicalObjects[indice].name} checked='checked'/>
-          <label for={astronomicalObjects[indice].name}>{astronomicalObjects[indice].name}</label>
-      </div>
-    )
-  })
+class Game extends Component {
+  constructor() {
+    super()
+    this.state = {
+      selectedAnswer: '',
+      answers: [],
+    }
+  }
 
-  if(isLoading) {
-    return (
-      <div className='spinner'>
-        <div className='star1'></div>
-        <div className='star2'></div>
-      </div>
-    )
-  } else {
-    return (
-      <section>
-        <img height='400' width='400'src={astronomicalObjects[randomIndices[0]].image_files} />
-          <form>
-          <fieldset>
-            <legend>Which name matches the picture?</legend>
-              {randomAnswers}
-          </fieldset>
-        </form>
-      </section>
-    )
+  buttonSelected = (id, randomIndices) => {
+    this.setState({
+      selectedAnswer: id,
+      answers: randomIndices,
+    })
+  }
+
+  render () {
+    const { chooseAnswer, astronomicalObjects, isLoading } = this.props
+    const { selectedAnswer, answers } = this.state
+    console.log(answers)
+    let randomIndices; 
+    if(answers.length > 1) {
+      randomIndices = answers
+    } else {
+      randomIndices = makeQuestions(astronomicalObjects)
+    }
+    const randomAnswers = randomIndices.map(number => {
+      return (            
+        <div key={astronomicalObjects[number].id}>
+            <input 
+              type='radio' 
+              name='name' 
+              value={astronomicalObjects[number].name} 
+              checked={astronomicalObjects[number].id === selectedAnswer}
+              onChange={() => this.buttonSelected(astronomicalObjects[number].id, randomIndices)}/>
+            <label htmlFor={astronomicalObjects[number].name}>{astronomicalObjects[number].name}</label>
+        </div>
+      )
+    })
+    if(isLoading) {
+      return (
+        <div className='spinner'>
+          <div className='star1'></div>
+          <div className='star2'></div>
+        </div>
+      )
+    } else {
+      return (
+        <section>
+          <img height='400' width='400'src={astronomicalObjects[randomIndices[0]].image_files} />
+            <form
+              onSubmit={(e)=> {
+                e.preventDefault()
+                console.log(e.target)
+              }
+            }>
+            <fieldset>
+              <legend>Which name matches the picture?</legend>
+                {randomAnswers}
+            </fieldset>
+            <input 
+              type='submit' 
+              value='Submit'/>
+          </form>
+        </section>
+      )
+    }
   }
 }
 
@@ -44,6 +80,6 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  selectedAnswer: (id) => dispatch(toggleSelected(id))
+  chooseAnswer: (id) => dispatch(starActions.toggleSelected(id))
 })
-export default connect(mapStateToProps)(Game)
+export default connect(mapStateToProps, mapDispatchToProps)(Game)
