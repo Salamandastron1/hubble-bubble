@@ -10,28 +10,36 @@ class Game extends Component {
     this.state = {
       selectedAnswer: '',
       answers: [],
+      imageSelection: null,
     }
   }
 
-  buttonSelected = (id, randomIndices) => {
+  buttonSelected = (id, randomIndices, subject) => {
     this.setState({
       selectedAnswer: id,
       answers: randomIndices,
     })
   }
 
-  handleSubmit = () => {
-    this.setState({})
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.setState({
+      selectedAnswer: '',
+      answers: []
+    })
   }
 
   render () {
-    const { chooseAnswer, astronomicalObjects, isLoading } = this.props
-    const { selectedAnswer, answers } = this.state
-    let randomIndices; 
+    const { chooseAnswer, astronomicalObjects, isLoading } = this.props;
+    const { selectedAnswer, answers, imageSelection } = this.state;
+    let randomIndices;
+    let subject;
     if(answers.length > 1) {
       randomIndices = answers
+      imageSelection = imageSelection
     } else {
       randomIndices = makeQuestions(astronomicalObjects)
+      subject = Math.floor(Math.random() * Math.floor(randomIndices.length - 1))
     }
     const randomAnswers = randomIndices.map(number => {
       return (            
@@ -41,7 +49,7 @@ class Game extends Component {
               name='name' 
               value={astronomicalObjects[number].name} 
               checked={astronomicalObjects[number].id === selectedAnswer}
-              onChange={() => this.buttonSelected(astronomicalObjects[number].id, randomIndices)}/>
+              onChange={() => this.buttonSelected(astronomicalObjects[number].id, randomIndices, subject)}/>
             <label htmlFor={astronomicalObjects[number].name}>{astronomicalObjects[number].name}</label>
         </div>
       )
@@ -56,7 +64,7 @@ class Game extends Component {
     } else {
       return (
         <section>
-          <img height='400' width='400'src={astronomicalObjects[randomIndices[0]].image_files} />
+          <img height='400' width='400'src={astronomicalObjects[randomIndices[subject]].image_files} />
             <form
               onSubmit={this.handleSubmit}>
             <fieldset>
