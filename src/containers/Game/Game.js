@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as starActions from '../../action-creators/astronomicalObjectsActions'
 import { makeQuestions } from '../../util/helper'
+import PopUp from '../PopUp/PopUp'
+import { popUpToggle } from '../../action-creators/popUpToggle'
 
 
 class Game extends Component {
@@ -21,15 +23,21 @@ class Game extends Component {
       imageSelection: subject,
     })
   }
-
+  nextQuestion = () => {
+    this.setState({
+      selectedAnswer: '',
+      answers: [],
+      imageSelection: null,
+    })
+  }
   handleSubmit = (imageId, radioId) => {
     if(imageId === radioId) {
-
+      this.props.togglePopUp()
     }
   }
 
   render () {
-    const { chooseAnswer, astronomicalObjects, isLoading } = this.props;
+    const { chooseAnswer, astronomicalObjects, isLoading, popUp } = this.props;
     const { selectedAnswer, answers, imageSelection } = this.state;
     let randomIndices;
     let subject;
@@ -67,6 +75,7 @@ class Game extends Component {
           <img height='400' width='400'src={answerSubject.image_files} />
             <form
               onSubmit={(e) => {
+                console.log(this.state)
                 e.preventDefault()
                 this.handleSubmit(answerSubject.id, selectedAnswer)
               }
@@ -79,7 +88,12 @@ class Game extends Component {
               type='submit' 
               value='Submit'/>
           </form>
-          
+          {popUp ? 
+            <PopUp 
+              star={answerSubject}
+              nextQuestion={this.nextQuestion}
+            />
+          : null }
         </section>
       )
     }
@@ -88,10 +102,12 @@ class Game extends Component {
 
 export const mapStateToProps = state => ({
   astronomicalObjects: state.astronomicalObjects,
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  popUp: state.popUp,
 })
 
 export const mapDispatchToProps = dispatch => ({
-  chooseAnswer: (id) => dispatch(starActions.toggleSelected(id))
+  chooseAnswer: (id) => dispatch(starActions.toggleSelected(id)),
+  togglePopUp: () => dispatch(popUpToggle())
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Game)
