@@ -84,7 +84,10 @@ class Game extends Component {
       const answerSubject = astronomicalObjects[randomIndices[subject]]
       return (
         <section className='game'>
-          <img height='400' width='400'src={answerSubject.image_files} />
+          <div 
+            className='bubble-image'
+            style={{backgroundImage: `url(${answerSubject.image_files})`}}>
+          </div>
             <form
               onSubmit={(e) => {
                 e.preventDefault()
