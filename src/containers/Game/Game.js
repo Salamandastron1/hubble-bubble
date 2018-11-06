@@ -20,10 +20,13 @@ class Game extends Component {
     })
   }
 
+  handleSubmit = () => {
+    this.setState({})
+  }
+
   render () {
     const { chooseAnswer, astronomicalObjects, isLoading } = this.props
     const { selectedAnswer, answers } = this.state
-    console.log(answers)
     let randomIndices; 
     if(answers.length > 1) {
       randomIndices = answers
@@ -55,11 +58,7 @@ class Game extends Component {
         <section>
           <img height='400' width='400'src={astronomicalObjects[randomIndices[0]].image_files} />
             <form
-              onSubmit={(e)=> {
-                e.preventDefault()
-                console.log(e.target)
-              }
-            }>
+              onSubmit={this.handleSubmit}>
             <fieldset>
               <legend>Which name matches the picture?</legend>
                 {randomAnswers}

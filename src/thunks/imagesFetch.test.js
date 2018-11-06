@@ -77,7 +77,6 @@ describe('imagesFetch', () => {
 
     await thunk(mockDispatch)
 
-
     expect(mockDispatch.mock.calls.length).toEqual(2)
   })
 })
