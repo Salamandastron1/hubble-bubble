@@ -2,7 +2,7 @@
 
 exports[`Game should matcht the snapshot 1`] = `
 <Game
-  dispatch={[Function]}
+  chooseAnswer={[Function]}
   store={
     Object {
       "clearActions": [Function],
@@ -39,7 +39,7 @@ exports[`Game should matcht the snapshot 1`] = `
 
 exports[`Game should return a different render if isLoading is True 1`] = `
 <Game
-  dispatch={[Function]}
+  chooseAnswer={[Function]}
   store={
     Object {
       "clearActions": [Function],

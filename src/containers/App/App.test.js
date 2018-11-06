@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow } from 'enzyme'
-import {BrowserRouter} from 'react-router-dom'
 import { fetchStarIds } from '../../thunks/fetchStarIds'
 import {mapStateToProps, mapDispatchToProps } from './App'
 import configureMockStore from 'redux-mock-store'
-import { Provider } from 'react-redux'
 jest.mock('../../thunks/fetchStarIds')
 
 

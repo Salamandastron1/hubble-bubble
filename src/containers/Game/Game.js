@@ -18,6 +18,7 @@ class Game extends Component {
     this.setState({
       selectedAnswer: id,
       answers: randomIndices,
+      imageSelection: subject,
     })
   }
 
@@ -36,7 +37,7 @@ class Game extends Component {
     let subject;
     if(answers.length > 1) {
       randomIndices = answers
-      imageSelection = imageSelection
+      subject = imageSelection
     } else {
       randomIndices = makeQuestions(astronomicalObjects)
       subject = Math.floor(Math.random() * Math.floor(randomIndices.length - 1))

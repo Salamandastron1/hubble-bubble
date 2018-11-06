@@ -53,7 +53,7 @@ describe('Game', () => {
       const mockDispatch = jest.fn()
       const mappedDispatch = mapDispatchToProps(mockDispatch)
 
-      mappedDispatch.selectedAnswer(4)
+      mappedDispatch.chooseAnswer(4)
 
       expect(mockDispatch).toHaveBeenCalledWith(toggleSelected(4))
     })
