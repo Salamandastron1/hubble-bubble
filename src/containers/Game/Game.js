@@ -34,13 +34,15 @@ class Game extends Component {
     })
   }
   handleSubmit = (imageId, radioId) => {
+    debugger
     if(imageId === radioId) {
       this.props.togglePopUp()
       this.setState({
         ...this.state,
         correct: true
       })
-    }else {
+    } 
+    if(this.state.imageSelection !== null && imageId !== radioId) {
       this.props.togglePopUp()
       this.setState({
         ...this.state
@@ -69,7 +71,10 @@ class Game extends Component {
               value={astronomicalObjects[number].name} 
               checked={astronomicalObjects[number].id === selectedAnswer}
               onChange={() => this.buttonSelected(astronomicalObjects[number].id, randomIndices, subject)}/>
-            <label htmlFor={astronomicalObjects[number].name}>{astronomicalObjects[number].name}</label>
+            <label 
+              htmlFor={astronomicalObjects[number].name}>
+              {astronomicalObjects[number].name}
+            </label>
         </div>
       )
     })

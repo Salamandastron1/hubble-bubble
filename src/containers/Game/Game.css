@@ -36,6 +36,7 @@
   height: 45px;
 }
 
-.submit: hover {
-  box-shadow: inset -4px -3px 2px white
+.submit:hover {
+  box-shadow: inset -4px -3px 2px white;
+  background: #512650;
 }
