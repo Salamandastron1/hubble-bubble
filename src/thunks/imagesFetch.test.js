@@ -53,7 +53,7 @@ describe('imagesFetch', () => {
   afterEach(() => {
   mockDispatch.mockClear();
 })
-  it('should call dispatch with toggleLoading', async () => {
+  it.skip('should call dispatch with toggleLoading', async () => {
     const thunk = imagesFetch(mockData)
 
     await thunk(mockDispatch)
@@ -68,8 +68,8 @@ describe('imagesFetch', () => {
     expect(window.fetch).toHaveBeenCalledWith(url(4236))
     expect(window.fetch).toHaveBeenCalledWith(url(4237))
   })
-  it.skip('should call dispatch with errorReceived if response is not ok', async () => {
-    window.fetch = jest.fn(() => Promise.resolve({
+  it('should call dispatch with errorReceived if response is not ok', async () => {
+    window.fetch = jest.fn(() => Promise.reject({
       ok: false,
       message: 'ya suck'
     }))
@@ -77,7 +77,6 @@ describe('imagesFetch', () => {
 
     await thunk(mockDispatch)
 
-    expect(mockDispatch.mock.calls.length).toEqual(1)
     expect(mockDispatch.mock.calls.length).toEqual(2)
   })
 })

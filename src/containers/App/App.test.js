@@ -5,9 +5,9 @@ import { shallow } from 'enzyme'
 import {BrowserRouter} from 'react-router-dom'
 import { fetchStarIds } from '../../thunks/fetchStarIds'
 import {mapStateToProps, mapDispatchToProps } from './App'
-jest.mock('../../thunks/fetchStarIds')
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
+jest.mock('../../thunks/fetchStarIds')
 
 
 describe('app', () => {
@@ -40,9 +40,7 @@ describe('app', () => {
   })
   describe('mapStateToProps', () => {
     it('should return an object with currentState', () => {
-      const desired = {
-        isLoading: true,
-      }
+      const desired = {"astronomicalObjects": [{"star": "Sol"}], "isLoading": true}
       const mockState = {
         isLoading: true,
         error: 'no errors here',
