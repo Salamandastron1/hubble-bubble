@@ -34,7 +34,7 @@ describe('imagesFetch', () => {
         {
             "file_url": "https://media.stsci.edu/uploads/image_file/image_attachment/1242/mini_thumb.jpg",
             "file_size": 470,
-            "width": 40,
+            "width": 4000,
             "height": 40
         },
         {
@@ -47,19 +47,12 @@ describe('imagesFetch', () => {
     }
     window.fetch = jest.fn(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve(mockData)
+      json: () => Promise.resolve(mockReturnData)
     }))
   })
   afterEach(() => {
   mockDispatch.mockClear();
 })
-  it.skip('should call dispatch with toggleLoading', async () => {
-    const thunk = imagesFetch(mockData)
-
-    await thunk(mockDispatch)
-
-    expect(mockDispatch).toHaveBeenCalledWith(toggleLoading())
-  })
   it('should call fetch with the correct params', async () => {
     const thunk = imagesFetch(mockData)
 

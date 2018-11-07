@@ -3,7 +3,7 @@ import './StarDetails.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-const StarDetails = (props) => {
+export const StarDetails = (props) => {
   const { image_files, description, name, isLoading } = props
   if(isLoading) {
     return (

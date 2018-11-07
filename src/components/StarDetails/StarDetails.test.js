@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import StarDetails from './StarDetails'
+import {StarDetails, mapStateToProps} from './StarDetails'
 
 describe('StarDetails', () => {
   it('should match the snapshot', () => {
@@ -21,7 +21,7 @@ describe('mapStateToProps', () => {
       filter: 'show'
     }
     const result = mapStateToProps(mockState)
-    
+
     expect(result).toEqual(desired)
   })
 })

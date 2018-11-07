@@ -8,7 +8,6 @@ import { popUpReducer } from './popUpReducer'
 const rootReducer = combineReducers({
   astronomicalObjects: astronomicalObjectsReducer,
   isLoading: isLoadingReducer,
-  filter: filterReducer,
   error: errorReducer,
   popUp: popUpReducer,
 })

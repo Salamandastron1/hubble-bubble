@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StarDetails should match the snapshot 1`] = `
-<section>
+<section
+  className="individual-card"
+>
   <Link
     className="back-btn"
     replace={false}
@@ -9,10 +11,15 @@ exports[`StarDetails should match the snapshot 1`] = `
   >
     ◀ back
   </Link>
-  <h2 />
-  <img />
-  <p>
-     
-  </p>
+  <h2
+    className="individual-name"
+  />
+  <img
+    height="500"
+    width="500"
+  />
+  <p
+    className="individual-description"
+  />
 </section>
 `;

@@ -39,3 +39,43 @@ exports[`should match the snapshot 1`] = `
   </div>
 </section>
 `;
+
+exports[`should match the snapshot if correct is truthy 1`] = `
+<section
+  className="popup-outer"
+>
+  <div
+    className="popup-inner"
+  >
+    <h2
+      className="response"
+    >
+      WOW YOU'RE RIGHT
+    </h2>
+    <h2
+      className="name-star"
+    >
+      name
+    </h2>
+    <button
+      className="next-question"
+      onClick={[Function]}
+    >
+      X
+    </button>
+    <div
+      className="pop-up-image"
+      style={
+        Object {
+          "backgroundImage": "url(url)",
+        }
+      }
+    />
+    <p
+      className="description"
+    >
+      blah
+    </p>
+  </div>
+</section>
+`;

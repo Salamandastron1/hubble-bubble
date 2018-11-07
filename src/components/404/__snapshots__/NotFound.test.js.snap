@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should matcht the snapshot 1`] = `
+<div>
+  Why are you here? Move along, nothin to see
+</div>
+`;

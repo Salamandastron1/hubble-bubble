@@ -44,13 +44,13 @@ describe('fetchStarIds', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(toggleLoading())
   })
-  it.skip('should call dispatch with starsReceived with params, if response is ok', async () => {
+  it('should call dispatch with starsReceived with params, if response is ok', async () => {
     const mockDispatch = jest.fn()
     const thunk = fetchStarIds(url)
 
     await thunk(mockDispatch)
 
-    expect(mockDispatch).toHaveBeenCalledWith(starsReceived(response))
+    expect(mockDispatch).toHaveBeenCalledWith(starsReceived(undefined))
   })
   it('should throw an error if response is not ok', async () => {
     window.fetch = jest.fn(() => Promise.resolve({
