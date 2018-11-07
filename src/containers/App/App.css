@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
+
 .App {
   height: 100vh;
   width: 100%;
@@ -7,12 +8,12 @@
   padding: 0;
 }
 .App-header {
-    display: grid;
-    justify-content: center;
-    grid-gap: 20px;
-    padding: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
+  display: grid;
+  justify-content: center;
+  grid-gap: 20px;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
 }
 .title {
   font-family: 'Titan One', cursive;
@@ -25,60 +26,61 @@
   color: #e5c5c4;
 }
 .study {
-    justify-self: center;
-    font-family: 'Titan One', cursive;
-    text-decoration: none;
-    color: white;
-    font-size: 1em;
-    text-align: center;
-    background: #c17cb3;
-    padding: 10px;
-    border-radius: 15px;
+  justify-self: center;
+  font-family: 'Titan One', cursive;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  text-align: center;
+  background: #c17cb3;
+  padding: 10px;
+  border-radius: 15px;
 }
 .study:hover {
-    font-family: 'Titan One', cursive;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    background: #97638c;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: inset -4px -3px 2px white
+  font-family: 'Titan One', cursive;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  background: #97638c;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: inset -4px -3px 2px white
 }
 .shimmer {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.1);
-    background: -webkit-gradient(linear, left top, right top, from(#c17cb3), to(#c17cb3), color-stop(0.5, #fff));
-    background: -moz-gradient(linear, left top, right top, from(#c17cb3), to(#c17cb3), color-stop(0.5, #fff));
-    -webkit-background-size: 30px 100%;
-    -moz-background-size: 30px 100%;
-    background-size: 30px 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-animation-name: shimmer;
-    -moz-animation-name: shimmer;
-    animation-name: shimmer;
-    -webkit-animation-duration: 4s;
-    -moz-animation-duration: 4s;
-    animation-duration: 4s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-color: #c17cb3;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.1);
+  background: -webkit-gradient(linear, left top, right top, from(#c17cb3), to(#c17cb3), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#c17cb3), to(#c17cb3), color-stop(0.5, #fff));
+  -webkit-background-size: 30px 100%;
+  -moz-background-size: 30px 100%;
+  background-size: 30px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 4s;
+  -moz-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #c17cb3;
 }
 
 .spinner {
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
+  align-content: center;
+  margin-top: 100px;
+  position: fixed;
+  left: 36%;
 }
 .star1, .star2 {
   background-color: #e5c5c4;
-    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   position: absolute;
     width: 101px;
   height: 101px;
@@ -93,62 +95,66 @@
 }
 
 @-webkit-keyframes sk-cubemove {
-  25% { -webkit-transform: translateX(100px) rotate(-90deg) scale(0.5) }
-  50% { -webkit-transform: translateX(100px) translateY(100px) rotate(-180deg) }
-  75% { -webkit-transform: translateX(0px) translateY(100px) rotate(-270deg) scale(0.5) }
+  25% { -webkit-transform: translateX(300px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(300px) translateY(300px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(300px) rotate(-270deg) scale(0.5) }
   100% { -webkit-transform: rotate(-360deg) }
 }
 
 @keyframes sk-cubemove {
   25% { 
-    transform: translateX(100px) rotate(-90deg) scale(0.5);
-    -webkit-transform: translateX(100px) rotate(-90deg) scale(0.5);
-  } 50% { 
-    transform: translateX(100px) translateY(100px) rotate(-179deg);
-    -webkit-transform: translateX(100px) translateY(100px) rotate(-179deg);
-  } 50.1% { 
-    transform: translateX(100px) translateY(100px) rotate(-180deg);
-    -webkit-transform: translateX(100px) translateY(100px) rotate(-180deg);
-  } 75% { 
-    transform: translateX(0px) translateY(100px) rotate(-270deg) scale(0.5);
-    -webkit-transform: translateX(0px) translateY(100px) rotate(-270deg) scale(0.5);
-  } 100% { 
+    transform: translateX(300px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(300px) rotate(-90deg) scale(0.5);
+  } 
+  50% { 
+    transform: translateX(300px) translateY(300px) rotate(-179deg);
+    -webkit-transform: translateX(300px) translateY(300px) rotate(-179deg);
+  } 
+  50.1% { 
+    transform: translateX(300px) translateY(300px) rotate(-180deg);
+    -webkit-transform: translateX(300px) translateY(300px) rotate(-180deg);
+  } 
+  75% { 
+    transform: translateX(0px) translateY(300px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(300px) rotate(-270deg) scale(0.5);
+  } 
+  100% { 
     transform: rotate(-360deg);
     -webkit-transform: rotate(-360deg);
   }
 }
 @-moz-keyframes shimmer {
-    0% {
-        background-position: top left;
-    }
-    100% {
-        background-position: top right;
-    }
+  0% {
+      background-position: top left;
+  }
+  100% {
+      background-position: top right;
+  }
 }
 
 @-webkit-keyframes shimmer {
-    0% {
-        background-position: top left;
-    }
-    100% {
-        background-position: top right;
-    }
+  0% {
+      background-position: top left;
+  }
+  100% {
+      background-position: top right;
+  }
 }
 
 @-o-keyframes shimmer {
-    0% {
-        background-position: top left;
-    }
-    100% {
-        background-position: top right;
-    }
+  0% {
+      background-position: top left;
+  }
+  100% {
+      background-position: top right;
+  }
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: top left;
-    }
-    100% {
-        background-position: top right;
-    }
+  0% {
+      background-position: top left;
+  }
+  100% {
+      background-position: top right;
+  }
 }

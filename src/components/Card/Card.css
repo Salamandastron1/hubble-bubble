@@ -1,0 +1,13 @@
+.card {
+  display: grid;
+  justify-items: center;
+  background-image: cover;
+}
+.card-name {
+  text-decoration: none;
+  color: #c17cb3;
+  font-family: 'Titan One';
+}
+.link {
+  text-decoration: none;
+}

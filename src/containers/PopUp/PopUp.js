@@ -5,27 +5,34 @@ import './PopUp.css'
 
 export const PopUp = (props) => {
   const { star, nextQuestion, closePopUp, correct } = props
-  
+
   return (
     <section className='popup-outer'>
       <div className='popup-inner'>
       {correct ?
-        <h1>WOW YOU'RE RIGHT</h1>
-        : <h1>Noooooot quite :)</h1>}
-        <h2>{star.name}</h2>
+        <h2 className='response'>WOW YOU'RE RIGHT</h2>
+        : <h2 className='response'>Noooooot quite :)</h2>}
+        <h2
+          className='name-star'
+        >{star.name}</h2>
         <button
+          className='next-question'
           onClick={() => {
             closePopUp();
             nextQuestion()
           }}
         >
-          Next Question
+          X
         </button>
-        <img 
-          src={star.image_files} 
-          height='200'
-          width='300' />
-        <p>{star.description}</p>
+        <div
+          className='pop-up-image'
+          style={{backgroundImage: `url(${star.image_files})`}}>
+        </div>
+        <p 
+          className='description'
+        >
+          {star.description}
+        </p>
       </div>
     </section>
   )

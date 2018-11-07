@@ -7,6 +7,7 @@ import Header from '../../components/Header/Header'
 import Game from '../Game/Game'
 import Study from '../Study/Study'
 import StarDetails from '../../components/StarDetails/StarDetails'
+import { NotFound } from '../../components/404/NotFound'
 
 class App extends Component {
 
@@ -49,6 +50,7 @@ class App extends Component {
             return <StarDetails {...star}/>
           }} />
           <Route path='/studytime' component={Study} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     );

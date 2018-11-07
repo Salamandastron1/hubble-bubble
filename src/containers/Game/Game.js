@@ -34,7 +34,6 @@ class Game extends Component {
     })
   }
   handleSubmit = (imageId, radioId) => {
-    debugger
     if(imageId === radioId) {
       this.props.togglePopUp()
       this.setState({
