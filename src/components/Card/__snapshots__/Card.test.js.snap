@@ -2,21 +2,23 @@
 
 exports[`Card should match the snapshot 1`] = `
 <Link
+  className="link"
   replace={false}
   to="/studytime/4"
 >
   <article
     className="card"
+    style={
+      Object {
+        "backgroundImage": "url(meow",
+      }
+    }
   >
-    <h4>
+    <h4
+      className="card-name"
+    >
       name
     </h4>
-    <img
-      alt="name"
-      height="400"
-      src="meow"
-      width="500"
-    />
   </article>
 </Link>
 `;

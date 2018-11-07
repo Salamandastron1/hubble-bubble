@@ -1,0 +1,73 @@
+.popup-outer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-family: 'Roboto'; 
+}
+
+.popup-inner {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 15%;
+  bottom: 15%;
+  background: #e5c5c4;
+  overflow-y: scroll;
+  display: grid;
+  justify-items: center;
+  padding: 25px;
+  border-radius: 25px;
+  grid-template-areas:
+  'a a a' 
+  'e e e'
+  'b b b'
+  'c c c';
+}
+.response {
+  grid-area: a;
+  color: #ba57a6;
+  font-family: 'Titan One';
+  font-size: 2em;
+}
+.pop-up-image {
+  background-size: cover;
+  border-radius: 10px;
+  height: 500px;
+  width: 500px;
+  grid-area: b;
+}
+.description {
+  grid-area: c;
+  color: #ba57a6;
+  font-family: 'Roboto';
+  font-size: 1.5em;
+  padding: 50px; 
+}
+.next-question {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  background: #ba57a6;
+  border: none;
+  color: white;
+  height: 35px;
+  width: 35px;
+  font-size: 1.5em;
+  border-radius: 50%;
+}
+.name-star {
+  grid-area: e;
+  text-align: center;
+  color: #ba57a6;
+  font-size: 2em;
+  border-radius: 15px;
+}
+
+
+

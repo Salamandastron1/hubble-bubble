@@ -1,0 +1,30 @@
+.card {
+  display: grid;
+  justify-items: center;
+  background-size: cover;
+  background: no-repeat center;
+  height: 400px;
+  width: 400px;
+  margin: 20px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
+  inset 0px 10px 30px 5px #ebc;
+  border-radius: 50%;
+  align-items: center;
+  transition: all .2s ease-in-out;
+}
+.card-name {
+  text-decoration: none;
+  color: white;
+  font-family: 'Titan One';
+  margin: 0;
+  background: #000000b5;
+  padding: 10px;
+  text-align: center;
+}
+.link {
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
