@@ -10,7 +10,7 @@ const Card = ({star}) => {
       className='link'
       to={`/studytime/${id}`}>
       <article
-        style={{backgroundImage: `url(${image_files})`}} 
+        style={{backgroundImage: `url(${image_files}`}} 
         className='card'>
         <h4 
           className='card-name'
