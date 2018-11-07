@@ -33,6 +33,13 @@ Bubble Hubble uses Jest and Enzyme for all testing purposes
 
 ![Wireframe](./public/bubble-hubble.png)
 
+#### Actual Screenshots
+
+![ScreenShot1](./public/1-screenshot.png)
+![ScreenShot2](./public/2-screenshot.png)
+![ScreenShot3](./public/3-screenshot.png)
+![ScreenShot4](./public/4-screenshot.png)
+![ScreenShot5](./public/5-screenshot.png)
 ### Original Assignment
 
 [Self-Directed Project](http://frontend.turing.io/projects/self-directed-project.html)
