@@ -6,8 +6,7 @@ import PopUp from '../PopUp/PopUp'
 import { popUpToggle } from '../../action-creators/popUpToggle'
 import './Game.css'
 
-
-class Game extends Component {
+export class Game extends Component {
   constructor() {
     super()
     this.state = {
@@ -63,8 +62,10 @@ class Game extends Component {
     }
     const randomAnswers = randomIndices.map(number => {
       return (            
-        <div key={astronomicalObjects[number].id}>
-            <input 
+        <div 
+          key={astronomicalObjects[number].id}>
+            <input
+              className={astronomicalObjects[number].name} 
               type='radio' 
               name='name' 
               value={astronomicalObjects[number].name} 
@@ -77,6 +78,7 @@ class Game extends Component {
         </div>
       )
     })
+  const answerSubject = astronomicalObjects[randomIndices[subject]];
     if(isLoading) {
       return (
         <div className='spinner'>
@@ -85,7 +87,6 @@ class Game extends Component {
         </div>
       )
     } else {
-      const answerSubject = astronomicalObjects[randomIndices[subject]]
       return (
         <section className='game'>
           <div 
@@ -128,7 +129,6 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  chooseAnswer: (id) => dispatch(starActions.toggleSelected(id)),
   togglePopUp: () => dispatch(popUpToggle())
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Game)
