@@ -1,6 +1,6 @@
 # Bubble Hubble
 
-Welcome to the endless expanse of space, at Hubble Bubble we're here to help you recognize and learn the roadmaps of the cosmos.
+Welcome to the endless expanse of space, at Bubble Hubble we're here to help you recognize and learn the roadmaps of the cosmos.
 
 ### See it Live
 Coming soon!
