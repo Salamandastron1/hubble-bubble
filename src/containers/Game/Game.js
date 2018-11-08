@@ -109,13 +109,12 @@ export class Game extends Component {
               type='submit' 
               value='Submit'/>
           </form>
-          {popUp ? 
+          {popUp && 
             <PopUp
               correct={correct} 
               star={answerSubject}
               nextQuestion={this.nextQuestion}
-            />
-          : null }
+            />}
         </section>
       )
     }
