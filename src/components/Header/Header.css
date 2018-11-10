@@ -59,9 +59,7 @@
         width: 320px;
         display: grid;
         background: #c17cb3;
-        position: relative;
-        top: 80px;
-        left: 40px;
+        margin-top: 100px;
     }
     .planet-orbit {
         display: none;
