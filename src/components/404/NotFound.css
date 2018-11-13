@@ -1,0 +1,11 @@
+.not-found {
+  color: #c17cb3;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  font-family: 'Titan One';
+  text-align: center;
+  flex-direction: column;
+}

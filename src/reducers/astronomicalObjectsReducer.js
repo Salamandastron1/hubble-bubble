@@ -3,13 +3,7 @@ export const astronomicalObjectsReducer = (state = [], action) => {
     case 'STARS_RECEIVED':
       return action.astronomicalObjects
     case 'TOGGLE_SELECTED':
-      return state.map(star => {
-        if(star.id === action.id) {
-          return {...star, selected: !star.selected}
-        } else {
-          return star
-        }
-      })
+      return state.map(star => star.id === action.id ? {...star, selected: !star.selected}: star)
     default:
       return state
   }
