@@ -1,6 +1,6 @@
 # Bubble Hubble
 
-Welcome to the endless expanse of space, at Hubble Bubble we're here to help you recognize and learn the roadmaps of the cosmos.
+Hubble API and Elementary school kids as a target audience. Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED so your child can learn the road maps of the cosmos with ease.
 
 ### See it Live
 Coming soon!
