@@ -59,6 +59,7 @@
         width: 320px;
         display: grid;
         background: #c17cb3;
+        margin: auto;
         margin-top: 100px;
     }
     .planet-orbit {
@@ -69,4 +70,24 @@
         border: solid;
         font-size: 1.5em;
     }
+}
+@media (min-width: 540px) and (max-width: 739px) {
+  .begin-game {
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        height: 320px;
+        width: 320px;
+        display: grid;
+        background: #c17cb3;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .planet-orbit {
+        display: none;
+    }
+    .game-nav {
+        align-self: center;
+        border: solid;
+        font-size: 1.5em;
+    }  
 }

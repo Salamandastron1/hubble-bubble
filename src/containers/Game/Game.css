@@ -40,3 +40,18 @@
   box-shadow: inset -4px -3px 2px white;
   background: #512650;
 }
+
+@media (min-width: 320px) and (max-width: 540px) {
+  .game {
+    flex-direction: column;
+  }
+  .bubble-image {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media (min-width: 540px) and (max-width: 768px) {
+  .game {
+    flex-direction: column;
+  }
+}
