@@ -57,6 +57,20 @@
 @media (min-width: 540px) and (max-width: 726px) {
   .game {
     flex-direction: column;
+    margin-top: 20px;
+  }
+  .bubble-image {
+    height: 300px;
+    width: 300px;
+  }
+  .game-form {
+    margin: 20px;
+  }
+}
+@media(min-width: 727px) and (max-width: 1200px) {
+  .game {
+    flex-direction: column;
+    margin-top: 20px;
   }
   .bubble-image {
     height: 300px;
