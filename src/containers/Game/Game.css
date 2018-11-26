@@ -40,3 +40,44 @@
   box-shadow: inset -4px -3px 2px white;
   background: #512650;
 }
+
+@media (min-width: 320px) and (max-width: 540px) {
+  .game {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .bubble-image {
+    height: 300px;
+    width: 300px;
+  }
+  .game-form {
+    margin: 20px;
+  }
+}
+@media (min-width: 540px) and (max-width: 726px) {
+  .game {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .bubble-image {
+    height: 300px;
+    width: 300px;
+  }
+  .game-form {
+    margin: 20px;
+  }
+}
+@media(min-width: 727px) and (max-width: 1200px) {
+  .game {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .bubble-image {
+    height: 300px;
+    width: 300px;
+  }
+  .game-form {
+    margin: 20px;
+  }
+}
+
