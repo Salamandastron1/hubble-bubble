@@ -1,6 +1,10 @@
 # Bubble Hubble
 
-The Hubble API and elementary school kids as a target audience and one week. Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED so your child can learn the road maps of the cosmos with ease.
+Time: One Week
+API: Hubble Satellite
+Audience: Elementary School Kids
+
+Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED so your child can learn the road maps of the cosmos with ease.
 
 ### See it Live
 Coming soon!
