@@ -12,7 +12,7 @@ Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED s
 ### APIs used
 * Hubble telescope archives @ hubblesite.org/api/
 
-### Primary technologies
+### Primary Technologies
 * React
 * Redux
 * React-Router
