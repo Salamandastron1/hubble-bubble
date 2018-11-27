@@ -8,7 +8,7 @@ const Card = ({star}) => {
   return (
     <Link 
       className='link'
-      to={`/studytime/${id}`}>
+      to={`/hubble-bubble/studytime/${id}`}>
       <article
         style={{backgroundImage: `url(${image_files}`}} 
         className='card'>

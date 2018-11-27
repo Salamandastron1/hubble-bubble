@@ -10,7 +10,7 @@ const Header = (props) => {
       <div className='button-text'>
         <NavLink 
           className='game-nav'
-          to='/gametime'>
+          to='/hubble-bubble/gametime'>
           Start!!! 
         </NavLink>
       </div>

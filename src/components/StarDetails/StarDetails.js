@@ -16,7 +16,7 @@ export const StarDetails = (props) => {
     return(
       <section className='individual-card'>
         <Link 
-          to='/studytime' 
+          to='/hubble-bubble/studytime' 
           className='back-btn'
         >
           ◀ back

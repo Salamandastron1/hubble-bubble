@@ -36,7 +36,7 @@ class App extends Component {
           </h1>
           <NavLink 
             className='study'
-            to='/studytime'>
+            to='/hubble-bubble/studytime'>
             Need to Study???
           </NavLink>
         </header>
