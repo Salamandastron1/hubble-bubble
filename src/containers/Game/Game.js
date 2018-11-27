@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as starActions from '../../action-creators/astronomicalObjectsActions'
 import { makeQuestions } from '../../util/helper'
 import PopUp from '../PopUp/PopUp'
 import { popUpToggle } from '../../action-creators/popUpToggle'
@@ -49,7 +48,7 @@ export class Game extends Component {
   }
 
   render () {
-    const { chooseAnswer, astronomicalObjects, isLoading, popUp } = this.props;
+    const { astronomicalObjects, isLoading, popUp } = this.props;
     const { selectedAnswer, answers, imageSelection, correct } = this.state;
     let randomIndices;
     let subject;

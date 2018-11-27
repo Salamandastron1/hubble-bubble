@@ -1,4 +1,3 @@
-import { toggleLoading } from '../action-creators/toggleLoading'
 import { errorReceived } from '../action-creators/errorReceived'
 
 export const imagesFetch = stars => {
