@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/hubble-bubble/static/css/main.3b4173dc.chunk.css"
   },
   {
-    "revision": "76bc78665779f7daae3a090ea21051a5",
+    "revision": "754a0fbda5438f72a7d8cff6e19fca71",
     "url": "/hubble-bubble/index.html"
   }
 ];
