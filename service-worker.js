@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/hubble-bubble/precache-manifest.b04400f50d20fc7983861790a5333846.js"
+  "/hubble-bubble/precache-manifest.b235e1ad6c3b756635f7006d0b557167.js"
 );
 
 workbox.clientsClaim();
