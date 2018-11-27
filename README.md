@@ -1,6 +1,6 @@
 # Bubble Hubble
 
-Hubble API and Elementary school kids as a target audience. Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED so your child can learn the road maps of the cosmos with ease.
+The Hubble API and elementary school kids as a target audience and one week. Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED so your child can learn the road maps of the cosmos with ease.
 
 ### See it Live
 Coming soon!
@@ -40,6 +40,7 @@ Bubble Hubble uses Jest and Enzyme for all testing purposes
 ![ScreenShot3](./public/3-screenshot.png)
 ![ScreenShot4](./public/4-screenshot.png)
 ![ScreenShot5](./public/5-screenshot.png)
+
 ### Original Assignment
 
 [Self-Directed Project](http://frontend.turing.io/projects/self-directed-project.html)
