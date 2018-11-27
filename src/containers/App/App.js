@@ -26,12 +26,12 @@ class App extends Component {
           <h1 
             className='title'>
             <span
-            onClick={() => history.push('/')} 
+            onClick={() => history.push('/hubble-bubble')} 
             className='bubble'>
               Bubble
             </span>  
             <span
-            onClick={() => history.push('/')} 
+            onClick={() => history.push('/hubble-bubble')} 
             className='shimmer'>Hubble </span>
           </h1>
           <NavLink 
@@ -41,15 +41,15 @@ class App extends Component {
           </NavLink>
         </header>
         <Switch>
-          <Route exact path='/' component={Header} />
-          <Route exact path='/gametime' component={Game} />
-          <Route path='/studytime/:id' render={({match}) => {
+          <Route exact path='/hubble-bubble' component={Header} />
+          <Route exact path='/hubble-bubble/gametime' component={Game} />
+          <Route path='/hubble-bubble/studytime/:id' render={({match}) => {
             const star = astronomicalObjects.find(object => {
               return object.id === parseInt(match.params.id)
             })
             return <StarDetails {...star}/>
           }} />
-          <Route path='/studytime' component={Study} />
+          <Route path='/hubble-bubble/studytime' component={Study} />
           <Route component={NotFound} />
         </Switch>
       </div>
