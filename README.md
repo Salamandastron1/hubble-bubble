@@ -51,4 +51,4 @@ Bubble Hubble uses Jest and Enzyme for all testing purposes
 
 ### Contributors
 
-Tim Garrity: [Github](https://github.com/Salamandastron1)<br> 
+Tim Garrity: [Github](https://github.com/Salamandastron1)<br>
