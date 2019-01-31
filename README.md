@@ -9,8 +9,8 @@ Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED s
 ### See it Live
 [Check it Out](https://salamandastron1.github.io/hubble-bubble)
 
-![Cat](https://raw.githubusercontent.com/Salamandastron1/hubble-bubble/0e53fd729ef1b28476fcac4c45caba5427bb716e/public/mobile_bubble.gif)
-![Mobile](https://i.imgur.com/fu5Bqes.gifv)
+![](https://raw.githubusercontent.com/Salamandastron1/hubble-bubble/0e53fd729ef1b28476fcac4c45caba5427bb716e/public/mobile_bubble.gif)
+![](https://raw.githubusercontent.com/Salamandastron1/hubble-bubble/0e53fd729ef1b28476fcac4c45caba5427bb716e/public/desktop_bubble.gif)
 
 ### APIs used
 * Hubble telescope archives @ hubblesite.org/api/
