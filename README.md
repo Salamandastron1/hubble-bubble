@@ -10,6 +10,7 @@ Welcome to the endless expanse of space. At Bubble Hubble learning is GAMEFIED s
 [Check it Out](https://salamandastron1.github.io/hubble-bubble)
 
 ![](https://raw.githubusercontent.com/Salamandastron1/hubble-bubble/0e53fd729ef1b28476fcac4c45caba5427bb716e/public/mobile_bubble.gif)
+<br>
 ![](https://raw.githubusercontent.com/Salamandastron1/hubble-bubble/0e53fd729ef1b28476fcac4c45caba5427bb716e/public/desktop_bubble.gif)
 
 ### APIs used
