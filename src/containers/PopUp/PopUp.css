@@ -71,16 +71,23 @@
 
 @media (min-width: 320px) and (max-width: 540px) {
   .popup-inner {
-    display: flex;
-    flex-direction: column;
     left: 5%;
     right: 5%;
     top: 5%;
     bottom: 5%;
+    display: block;
+    background: #e5c5c4;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
-  popup-image{
-    height: 50px;
-    width: 50px;
+  .pop-up-image{
+    height: 300px;
+    width: 300px;
+  }
+  next-question {
+    top: 15px;
   }
 }
 
