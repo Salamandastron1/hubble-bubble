@@ -24,9 +24,9 @@ export const imagesFetch = stars => {
 
 export const filterImages = data => {
   return data.find(image => {
-    if(image.file_url.includes('.png') && image.width >= 2000) {
+    if(image.file_url.includes('.png') && image.width >= 500) {
       return image
-    } else if (image.file_url.includes('.jpg') && image.width >= 2000) {
+    } else if (image.file_url.includes('.jpg') && image.width >= 500) {
       return image
     } else if (image.file_url.includes('.png') && image.width >= 565){
       return image
