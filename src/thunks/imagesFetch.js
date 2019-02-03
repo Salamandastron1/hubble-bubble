@@ -11,8 +11,7 @@ export const imagesFetch = stars => {
         } else {
           const data = await response.json()
           const filteredImage = filterImages(data.image_files)
-          const description = data.description.replace(/<strong>/gi, '')
-          console.log(description)
+          const description = data.description.replace(/<(\/)?strong([^>]*)>/g, '').replace(/<(\/)?p([^>]*)>/g, '');
           
           return {name: data.name, description: description, image_files: filteredImage.file_url, id: star.id, selected: false}
         }
