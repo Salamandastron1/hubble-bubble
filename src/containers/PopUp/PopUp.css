@@ -86,8 +86,11 @@
     height: 300px;
     width: 300px;
   }
-  next-question {
+  .next-question {
     top: 15px;
+  }
+  .description{
+    padding: 0;
   }
 }
 

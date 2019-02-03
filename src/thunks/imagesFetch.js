@@ -11,8 +11,10 @@ export const imagesFetch = stars => {
         } else {
           const data = await response.json()
           const filteredImage = filterImages(data.image_files)
+          const description = data.description.replace(/<strong>/gi, '')
+          console.log(description)
           
-          return {name: data.name, description: data.description, image_files: filteredImage.file_url, id: star.id, selected: false}
+          return {name: data.name, description: description, image_files: filteredImage.file_url, id: star.id, selected: false}
         }
       } catch(e) {
         dispatch(errorReceived(e.message))
