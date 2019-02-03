@@ -69,5 +69,19 @@
   border-radius: 15px;
 }
 
+@media (min-width: 320px) and (max-width: 540px) {
+  .popup-inner {
+    display: flex;
+    flex-direction: column;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+  }
+  popup-image{
+    height: 50px;
+    width: 50px;
+  }
+}
 
 

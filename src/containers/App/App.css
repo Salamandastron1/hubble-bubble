@@ -177,6 +177,7 @@
   .spinner {
     left: 5px;
   }
+
   @-webkit-keyframes sk-cubemove {
   25% { -webkit-transform: translateX(200px) rotate(-90deg) scale(0.5) }
   50% { -webkit-transform: translateX(200px) translateY(200px) rotate(-180deg) }
