@@ -7,7 +7,7 @@ exports[`StarDetails should match the snapshot 1`] = `
   <Link
     className="back-btn"
     replace={false}
-    to="/studytime"
+    to="/hubble-bubble/studytime"
   >
     ◀ back
   </Link>

@@ -21,7 +21,7 @@ exports[`Game should matcht the snapshot 1`] = `
         Which name matches the picture?
       </legend>
       <div
-        key="2"
+        key="4"
       >
         <input
           checked={false}
@@ -55,7 +55,7 @@ exports[`Game should matcht the snapshot 1`] = `
         </label>
       </div>
       <div
-        key="4"
+        key="2"
       >
         <input
           checked={false}
