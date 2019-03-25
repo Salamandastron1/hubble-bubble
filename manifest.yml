@@ -1,0 +1,5 @@
+applications:
+- name: bubble-hubble
+  instances: 1
+  random-route: true
+  path: /build
