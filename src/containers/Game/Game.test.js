@@ -21,29 +21,6 @@ describe('Game', () => {
       togglePopUp={() => jest.fn()} 
       isLoading={false}/>)
   })
- 
-  it('should return a different render if isLoading is True', () => {
-    wrapper = shallow(<Game 
-                        isLoading={true}
-                        astronomicalObjects={
-      [{id: 1, image_files:'meow', name: 'name'},{id: 2, image_files:'meow', name: 'name'},{id: 3, image_files:'meow', name: 'name'},{id: 4, image_files:'meow', name: 'name'},{id: 5, image_files:'meow', name: 'name'}
-      ]}
-                      />)
-
-    expect(wrapper).toMatchSnapshot()
-  })
-  it('should render the state if answers has a length greater than 1', () => {
-    wrapper = shallow(<Game astronomicalObjects={
-      [{id: 1, image_files:'meow', name: 'class'},{id: 2, image_files:'meow', name: 'name'},{id: 3, image_files:'meow', name: 'name'},{id: 4, image_files:'meow', name: 'name'},{id: 5, image_files:'meow', name: 'name'}
-      ]} 
-      isLoading={false}
-      />)
-    wrapper.setState({
-      answers: [1, 3 , 2, 0],
-      imageSelection: 3,
-    })
-    expect(wrapper).toMatchSnapshot()
-  })
   describe('mapStateToProps', () => {
     it('should return a an object with state inside of it', () => {
       const desired = {
