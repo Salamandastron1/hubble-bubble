@@ -21,11 +21,7 @@ describe('Game', () => {
       togglePopUp={() => jest.fn()} 
       isLoading={false}/>)
   })
-  it('should matcht the snapshot', () => {
-    
-
-    expect(wrapper).toMatchSnapshot()
-  })
+ 
   it('should return a different render if isLoading is True', () => {
     wrapper = shallow(<Game 
                         isLoading={true}
