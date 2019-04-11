@@ -3,3 +3,5 @@ applications:
   instances: 1
   random-route: true
   path: build/
+  buildpacks: 
+    - staticfile_buildpack
